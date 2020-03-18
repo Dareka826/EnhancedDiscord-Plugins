@@ -13,7 +13,7 @@ module.exports = new Plugin({
 			let timestamps = [];
 			
 			for(let s of document.getElementsByTagName("span"))
-    			if(s.className.match(/timestamp-.*/) != null)
+				if(s.className.match(/timestamp-.*/) != null)
         			timestamps.push(s.children[0]);
 			
 			for(let t of timestamps)

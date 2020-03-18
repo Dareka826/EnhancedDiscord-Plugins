@@ -14,23 +14,23 @@ module.exports = new Plugin({
 			
 			for(let s of document.getElementsByTagName("span"))
 				if(s.className.match(/timestamp-.*/) != null)
-        			timestamps.push(s.children[0]);
+					timestamps.push(s.children[0]);
 			
 			for(let t of timestamps)
 			{
-    			let d = new Date(t.getAttribute("aria-label"));
-    			let mon = d.getMonth()+1;
-    			let day = d.getDate();
-    			let hou = d.getHours();
-    			let min = d.getMinutes();
-    			if(mon < 10) mon = "0" + mon;
-    			if(day < 10) day = "0" + day;
-    			if(hou < 10) hou = "0" + hou;
-    			if(min < 10) min = "0" + min;
-    			let isodate = d.getFullYear() + "-" + mon + "-" + day + "T" + hou + ":" + min;
-    			t.setAttribute("aria-label", isodate);
-    			t.innerText = isodate;
-    			t.style.fontFamily = "Monospace";
+				let d = new Date(t.getAttribute("aria-label"));
+				let mon = d.getMonth()+1;
+				let day = d.getDate();
+				let hou = d.getHours();
+				let min = d.getMinutes();
+				if(mon < 10) mon = "0" + mon;
+				if(day < 10) day = "0" + day;
+				if(hou < 10) hou = "0" + hou;
+				if(min < 10) min = "0" + min;
+				let isodate = d.getFullYear() + "-" + mon + "-" + day + "T" + hou + ":" + min;
+				t.setAttribute("aria-label", isodate);
+				t.innerText = isodate;
+				t.style.fontFamily = "Monospace";
 			}
 		};
 
